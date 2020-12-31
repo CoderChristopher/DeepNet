@@ -15,7 +15,6 @@
 #include "dll.h"
 #include "actorfunctions.h"
 #include "data.h"
-#include "entities.h"
 #include "interactables.h"
 #include "tiles.h"
 #include "rooms.h"
