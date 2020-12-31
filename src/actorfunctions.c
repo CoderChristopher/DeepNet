@@ -489,24 +489,31 @@ void SysAdminAct(struct actor* self){
 	return;
 }
 float PlayerGetTrace(){
-	return (float)player->stack[0];
+	float dt;
+	memcpy(&dt,&player->stack[0],sizeof(float));
+	return dt;
 }
 void PlayerIncrementTrace(){
-	player->stack[0]+=(float)player->stack[4];
+	float dt,dt2;
+	memcpy(&dt ,&player->stack[4],sizeof(float));
+	memcpy(&dt2,&player->stack[0],sizeof(float));
+	dt2+=dt;
+	memcpy(&player->stack[0],&dt2,sizeof(float));
 }
 void PlayerSetDeltaTrace(float dt){
 	memcpy(&player->stack[4],&dt,sizeof(float));
-	player->stack[4]=dt;
 }
 float PlayerGetDeltaTrace(){
-	return (float)player->stack[4];
+	float dt;
+	memcpy(&dt,&player->stack[4],sizeof(float));
+	return dt;
 }
 void PlayerSetMoney(int money){
 	player->stack[8]=money;
 	
 }
 int PlayerGetMoney(){
-	return (float)player->stack[8];
+	return (int)(player->stack[8]);
 }
 void PlayerInput(struct actor* player){
 	SetEntryPoint(EP_PLAYERINPUT);
