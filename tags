@@ -1,0 +1,167 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_FILESEP	slash	/slash or backslash/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	0.0.0	/a3c87ab5/
+ACTION_MOVE_DOWN	const.h	/^#define ACTION_MOVE_DOWN /;"	d
+ACTION_MOVE_LEFT	const.h	/^#define ACTION_MOVE_LEFT /;"	d
+ACTION_MOVE_RIGHT	const.h	/^#define ACTION_MOVE_RIGHT /;"	d
+ACTION_MOVE_UP	const.h	/^#define ACTION_MOVE_UP /;"	d
+ACTION_NONE	const.h	/^#define ACTION_NONE /;"	d
+AppendDll	dll.h	/^void AppendDll(struct dll* list,void* item){$/;"	f	typeref:typename:void
+BASE_TRACE_DELTA	const.h	/^#define BASE_TRACE_DELTA /;"	d
+BOOLEAN	const.h	/^#define BOOLEAN /;"	d
+BuildDataStruct	interactables.h	/^char* BuildDataStruct(struct data* dest){$/;"	f	typeref:typename:char *
+BuildMoneyStruct	interactables.h	/^char* BuildMoneyStruct(int value){$/;"	f	typeref:typename:char *
+BuildWarpStruct	interactables.h	/^char* BuildWarpStruct(struct room* dest,int x,int y){$/;"	f	typeref:typename:char *
+COL_BL	globals.h	/^int COL_BL  ;$/;"	v	typeref:typename:int
+COL_BLWH	globals.h	/^int COL_BLWH;$/;"	v	typeref:typename:int
+COL_GR	globals.h	/^int COL_GR  ;$/;"	v	typeref:typename:int
+COL_GRBL	globals.h	/^int COL_GRBL;$/;"	v	typeref:typename:int
+COL_GRWH	globals.h	/^int COL_GRWH;$/;"	v	typeref:typename:int
+COL_RD	globals.h	/^int COL_RD  ;$/;"	v	typeref:typename:int
+COL_RDBK	globals.h	/^int COL_RDBK;$/;"	v	typeref:typename:int
+COL_RDGR	globals.h	/^int COL_RDGR;$/;"	v	typeref:typename:int
+COL_RDYL	globals.h	/^int COL_RDYL;$/;"	v	typeref:typename:int
+COL_WH	globals.h	/^int COL_WH  ;$/;"	v	typeref:typename:int
+COL_YL	globals.h	/^int COL_YL  ;$/;"	v	typeref:typename:int
+COL_YLBK	globals.h	/^int COL_YLBK;$/;"	v	typeref:typename:int
+CalculateDamages	actorfunctions.h	/^void CalculateDamages(struct actor* a1,struct actor* a2){$/;"	f	typeref:typename:void
+ChangeGameState	gamestate.h	/^void ChangeGameState(unsigned char state){$/;"	f	typeref:typename:void
+CheckPassable	rooms.h	/^BOOLEAN CheckPassable(int x,int y,struct room* rm){$/;"	f	typeref:typename:BOOLEAN
+CircleRoom	rooms.h	/^void CircleRoom(struct room* rm){$/;"	f	typeref:typename:void
+CoinFlip	utility.h	/^char CoinFlip(){$/;"	f	typeref:typename:char
+DISCONNECT_ProcessInput	input.h	/^void DISCONNECT_ProcessInput(){$/;"	f	typeref:typename:void
+DISCONNECT_Render	render.h	/^void DISCONNECT_Render(){$/;"	f	typeref:typename:void
+DISCONNECT_Update	update.h	/^void DISCONNECT_Update(){$/;"	f	typeref:typename:void
+DataCollision	interactables.h	/^void DataCollision(struct interactable* self,struct actor* collision){$/;"	f	typeref:typename:void
+DefaultActBehavior	actorfunctions.h	/^void DefaultActBehavior(struct actor* self){$/;"	f	typeref:typename:void
+DefaultCollisionBehavior	actorfunctions.h	/^void DefaultCollisionBehavior(struct actor* self,struct actor* opponent){$/;"	f	typeref:typename:void
+Deus	rooms.h	/^void Deus(struct room* rm){$/;"	f	typeref:typename:void
+Distance	utility.h	/^int Distance(int x,int y){$/;"	f	typeref:typename:int
+FALSE	const.h	/^#define FALSE /;"	d
+GAMEOVER_ProcessInput	input.h	/^void GAMEOVER_ProcessInput(){$/;"	f	typeref:typename:void
+GAMEOVER_Render	render.h	/^void GAMEOVER_Render(){$/;"	f	typeref:typename:void
+GAMEOVER_Update	update.h	/^void GAMEOVER_Update(){$/;"	f	typeref:typename:void
+GenerateMap	map.h	/^struct room* GenerateMap(int nodes){$/;"	f	typeref:struct:room *
+GiveAttack	actorfunctions.h	/^void GiveAttack(struct actor* act,const char name[64],unsigned int value){$/;"	f	typeref:typename:void
+GiveDefense	actorfunctions.h	/^void GiveDefense(struct actor* act,const char name[64],int value){$/;"	f	typeref:typename:void
+INGAME_ProcessInput	input.h	/^void INGAME_ProcessInput(){$/;"	f	typeref:typename:void
+INGAME_Render	render.h	/^void INGAME_Render(){$/;"	f	typeref:typename:void
+INGAME_Update	update.h	/^void INGAME_Update(){$/;"	f	typeref:typename:void
+INTERACTABLE_STACKSIZE	const.h	/^#define INTERACTABLE_STACKSIZE /;"	d
+KillerAct	actorfunctions.h	/^void KillerAct(struct actor* self){$/;"	f	typeref:typename:void
+KillerCollision	actorfunctions.h	/^void KillerCollision(struct actor* self,struct actor* opponent){$/;"	f	typeref:typename:void
+KillerInput	actorfunctions.h	/^void KillerInput(struct actor* self){$/;"	f	typeref:typename:void
+LineOfSight	rooms.h	/^BOOLEAN LineOfSight(int x1,int y1,int x2,int y2,struct room* rm){$/;"	f	typeref:typename:BOOLEAN
+MoneyCollision	interactables.h	/^void MoneyCollision(struct interactable* self,struct actor* collision){$/;"	f	typeref:typename:void
+NColorPairs	ninit.h	/^void NColorPairs(){$/;"	f	typeref:typename:void
+NCursesInit	ninit.h	/^void NCursesInit(){$/;"	f	typeref:typename:void
+NewActor	actorfunctions.h	/^struct actor* NewActor(char look,int attribute,int x,int y,struct room* rm,void* adf,void* cr,vo/;"	f	typeref:struct:actor *
+NewData	data.h	/^struct data* NewData(const char* name,char type,int value){$/;"	f	typeref:struct:data *
+NewDll	dll.h	/^void NewDll(struct dll** entrypoint){$/;"	f	typeref:typename:void
+NewInteractable	interactables.h	/^void NewInteractable(char look,int attribute,int x,int y,struct room* rm,void* col,void* stackin/;"	f	typeref:typename:void
+NewRoom	rooms.h	/^struct room* NewRoom(void (*generatorfunction)(struct room*),int sizex,int sizey){$/;"	f	typeref:struct:room *
+NewTile	tiles.h	/^void NewTile(char look,int attribute,unsigned int x,unsigned int y,struct room* rm,BOOLEAN passa/;"	f	typeref:typename:void
+NextDll	dll.h	/^struct dll* NextDll(struct dll* entrypoint){$/;"	f	typeref:struct:dll *
+PI	const.h	/^#define PI /;"	d
+Pillars	rooms.h	/^void Pillars(struct room* rm){$/;"	f	typeref:typename:void
+PlayerAct	actorfunctions.h	/^void PlayerAct(struct actor* self){$/;"	f	typeref:typename:void
+PlayerCollision	actorfunctions.h	/^void PlayerCollision(struct actor* self,struct actor* opponent){$/;"	f	typeref:typename:void
+PlayerInput	actorfunctions.h	/^void PlayerInput(struct actor* player){$/;"	f	typeref:typename:void
+ProcessInput	globals.h	/^void (*ProcessInput)()=NULL;$/;"	v	typeref:typename:void (*)()
+RandomRoom	rooms.h	/^void RandomRoom(struct room* rm){$/;"	f	typeref:typename:void
+RandomSign	utility.h	/^int RandomSign(){$/;"	f	typeref:typename:int
+RectangularRoom	rooms.h	/^void RectangularRoom(struct room* rm){$/;"	f	typeref:typename:void
+RemoveActor	actorfunctions.h	/^void RemoveActor(struct actor* remove){$/;"	f	typeref:typename:void
+RemoveDll	dll.h	/^void RemoveDll(struct dll** list,void* item){$/;"	f	typeref:typename:void
+Render	globals.h	/^void (*Render)()=NULL;$/;"	v	typeref:typename:void (*)()
+STATE_DISCONNECT	const.h	/^#define STATE_DISCONNECT /;"	d
+STATE_GAMEOVER	const.h	/^#define STATE_GAMEOVER /;"	d
+STATE_HIGHEST	const.h	/^#define STATE_HIGHEST /;"	d
+STATE_INGAME	const.h	/^#define STATE_INGAME /;"	d
+SysAdminAct	actorfunctions.h	/^void SysAdminAct(struct actor* self){$/;"	f	typeref:typename:void
+SysAdminCollision	actorfunctions.h	/^void SysAdminCollision(struct actor* self,struct actor* opponent){$/;"	f	typeref:typename:void
+SysAdminInput	actorfunctions.h	/^void SysAdminInput(struct actor* sysad){$/;"	f	typeref:typename:void
+TRUE	const.h	/^#define TRUE /;"	d
+TransferActorToRoom	rooms.h	/^void TransferActorToRoom(struct room* to,struct actor* move){$/;"	f	typeref:typename:void
+Update	globals.h	/^void (*Update)()=NULL;$/;"	v	typeref:typename:void (*)()
+WarpCollision	interactables.h	/^void WarpCollision(struct interactable* self,struct actor* collision){$/;"	f	typeref:typename:void
+__ACTORFUNCTIONS_H__	actorfunctions.h	/^#define __ACTORFUNCTIONS_H__$/;"	d
+__DATA_H__	data.h	/^#define __DATA_H__$/;"	d
+__DLL_H__	dll.h	/^#define __DLL_H__$/;"	d
+__GAME_STATE_H__	gamestate.h	/^#define __GAME_STATE_H__$/;"	d
+__GLOBALS__H__	globals.h	/^#define __GLOBALS__H__$/;"	d
+__INPUT_H__	input.h	/^#define __INPUT_H__$/;"	d
+__INTERACTABLES_H__	interactables.h	/^#define __INTERACTABLES_H__$/;"	d
+__MAP_H__	map.h	/^#define __MAP_H__$/;"	d
+__NINIT_H__	ninit.h	/^#define __NINIT_H__$/;"	d
+__RENDER_H__	render.h	/^#define __RENDER_H__$/;"	d
+__ROOMS_H__	rooms.h	/^#define __ROOMS_H__$/;"	d
+__STRUCT__H__	structs.h	/^#define __STRUCT__H__$/;"	d
+__TILES_H__	tiles.h	/^#define __TILES_H__$/;"	d
+__UPDATE_H__	update.h	/^#define __UPDATE_H__$/;"	d
+__UTILTIY__H__	utility.h	/^#define __UTILTIY__H__$/;"	d
+act	structs.h	/^	void (*act)(struct actor*);$/;"	m	struct:actor	typeref:typename:void (*)(struct actor *)
+action	structs.h	/^	char action;$/;"	m	struct:actor	typeref:typename:char
+actiondecisionfunction	structs.h	/^	void (*actiondecisionfunction)(struct actor*);$/;"	m	struct:actor	typeref:typename:void (*)(struct actor *)
+actor	structs.h	/^struct actor{$/;"	s
+actors	structs.h	/^	struct dll* actors;$/;"	m	struct:room	typeref:struct:dll *
+apperance	structs.h	/^	struct look      apperance;$/;"	m	struct:actor	typeref:struct:look
+apperance	structs.h	/^	struct look apperance;$/;"	m	struct:interactable	typeref:struct:look
+apperance	structs.h	/^	struct look apperance;$/;"	m	struct:tile	typeref:struct:look
+attack	structs.h	/^	struct software* attack;$/;"	m	struct:actor	typeref:struct:software *
+ch	globals.h	/^int ch=0;$/;"	v	typeref:typename:int
+character	structs.h	/^	char character;$/;"	m	struct:look	typeref:typename:char
+collisionresolver	structs.h	/^	void (*collisionresolver)(struct actor*,struct actor*);$/;"	m	struct:actor	typeref:typename:void (*)(struct actor *,struct actor *)
+collisionresolver	structs.h	/^	void (*collisionresolver)(struct interactable*,struct actor*);$/;"	m	struct:interactable	typeref:typename:void (*)(struct interactable *,struct actor *)
+current	structs.h	/^	void* current;$/;"	m	struct:dll	typeref:typename:void *
+currentroom	globals.h	/^struct room* currentroom=NULL;$/;"	v	typeref:struct:room *
+currentroom	structs.h	/^	struct room*     currentroom;$/;"	m	struct:actor	typeref:struct:room *
+data	structs.h	/^	struct dll*      data; $/;"	m	struct:actor	typeref:struct:dll *
+data	structs.h	/^struct data{$/;"	s
+datalist	globals.h	/^struct dll* datalist=NULL;$/;"	v	typeref:struct:dll *
+defense	structs.h	/^	struct software* defense;$/;"	m	struct:actor	typeref:struct:software *
+deltatracepercentage	globals.h	/^float deltatracepercentage=1.0f;$/;"	v	typeref:typename:float
+dll	structs.h	/^struct dll{$/;"	s
+done	globals.h	/^BOOLEAN done=FALSE;$/;"	v	typeref:typename:BOOLEAN
+entitycap	globals.h	/^const int entitycap=5000;$/;"	v	typeref:typename:const int
+entitycount	globals.h	/^unsigned int entitycount=0;$/;"	v	typeref:typename:unsigned int
+gamestate	globals.h	/^unsigned char gamestate=STATE_INGAME;$/;"	v	typeref:typename:unsigned char
+health	structs.h	/^	char health;$/;"	m	struct:actor	typeref:typename:char
+interactable	structs.h	/^struct interactable{$/;"	s
+interactables	structs.h	/^	struct dll* interactables;$/;"	m	struct:room	typeref:struct:dll *
+look	structs.h	/^struct look{$/;"	s
+main	main.c	/^int main(int argc,void* argv[]){$/;"	f	typeref:typename:int
+main	makefile	/^main:$/;"	t
+map	structs.h	/^	struct tile* map;$/;"	m	struct:room	typeref:struct:tile *
+money	globals.h	/^int money=0;$/;"	v	typeref:typename:int
+name	structs.h	/^	char name[64];$/;"	m	struct:data	typeref:typename:char[64]
+name	structs.h	/^	char name[64];$/;"	m	struct:software	typeref:typename:char[64]
+nattribute	structs.h	/^	int nattribute;$/;"	m	struct:look	typeref:typename:int
+next	structs.h	/^	struct dll* next;$/;"	m	struct:dll	typeref:struct:dll *
+passable	structs.h	/^	BOOLEAN passable;$/;"	m	struct:tile	typeref:typename:BOOLEAN
+player	render.h	/^struct actor* player;$/;"	v	typeref:struct:actor *
+prev	structs.h	/^	struct dll* prev;$/;"	m	struct:dll	typeref:struct:dll *
+room	structs.h	/^struct room{$/;"	s
+rooms	globals.h	/^struct dll* rooms=NULL;$/;"	v	typeref:struct:dll *
+run	makefile	/^run:$/;"	t
+sizex	structs.h	/^	char sizex;$/;"	m	struct:room	typeref:typename:char
+sizey	structs.h	/^	char sizey;$/;"	m	struct:room	typeref:typename:char
+software	structs.h	/^struct software{$/;"	s
+stack	structs.h	/^	char stack[10];$/;"	m	struct:actor	typeref:typename:char[10]
+stack	structs.h	/^	char stack[INTERACTABLE_STACKSIZE];$/;"	m	struct:interactable	typeref:typename:char[]
+tile	structs.h	/^struct tile{$/;"	s
+tracepercentage	globals.h	/^float tracepercentage=0.0f;$/;"	v	typeref:typename:float
+type	structs.h	/^	char type;$/;"	m	struct:data	typeref:typename:char
+type	structs.h	/^	char type;$/;"	m	struct:interactable	typeref:typename:char
+undo	structs.h	/^	void (*undo)(struct actor*);$/;"	m	struct:actor	typeref:typename:void (*)(struct actor *)
+value	structs.h	/^	int value;$/;"	m	struct:data	typeref:typename:int
+value	structs.h	/^	unsigned int value;$/;"	m	struct:software	typeref:typename:unsigned int
+x	structs.h	/^	int x;$/;"	m	struct:actor	typeref:typename:int
+x	structs.h	/^	int x;$/;"	m	struct:interactable	typeref:typename:int
+y	structs.h	/^	int y;$/;"	m	struct:actor	typeref:typename:int
+y	structs.h	/^	int y;$/;"	m	struct:interactable	typeref:typename:int

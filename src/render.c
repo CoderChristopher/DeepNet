@@ -89,6 +89,7 @@ void INGAME_Render(){
 	mvprintw(5,23,"Reaction:%i",player->reaction);
 	mvprintw(6,23,"Stealth :%i",player->stealth);
 	mvprintw(7,23,"Money   :%i",PlayerGetMoney());
+	mvprintw(8,23,"DT      :%f",PlayerGetTrace());
 
 	//Render a really cool tracer indicator
 	static BOOLEAN tick=TRUE;//Used to create blinking effect

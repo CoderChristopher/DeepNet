@@ -78,11 +78,14 @@ void FreeDll(struct dll** list){
 	while(iter->next){
 		iter=iter->next;
 	}
-	do{
-		free(iter->current);
-		iter=iter->prev;
-		free(iter->next);
-	}while(iter->prev);
+	if(iter)
+		do{
+			free(iter->current);
+			iter=iter->prev;
+			if(!iter)
+				break;
+			free(iter->next);
+		}while(iter->prev);
 
 	ResetEntryPoint();
 	return;

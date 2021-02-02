@@ -1,10 +1,8 @@
 #include "actorfunctions.h"
 void CalculateDamages(struct actor* a1,struct actor* a2){
-	SetEntryPoint(EP_CALCULATEDAMAGES);
-	if(!a1||!a2){
-		ResetEntryPoint();
+	if(!a1||!a2)
 		return;
-	}
+	SetEntryPoint(EP_CALCULATEDAMAGES);
 	int result1=0;
 	int result2=0;
 	if(a1->attack&&(rand()%(140-a2->reaction)))
@@ -28,10 +26,6 @@ void CalculateDamages(struct actor* a1,struct actor* a2){
 	if(!a1->apperance||!a2->apperance){
 		ResetEntryPoint();
 		return;
-	}
-	if(a1->apperance->character=='@'||a2->apperance->character=='@'){
-		a1->seen=TRUE;
-		a2->seen=TRUE;
 	}
 	ResetEntryPoint();
 	return;
@@ -489,24 +483,28 @@ void SysAdminAct(struct actor* self){
 	return;
 }
 float PlayerGetTrace(){
-	return (float)player->stack[0];
+	float buf;
+	memcpy(&buf,&player->stack[0],sizeof(float));
+	return buf;
 }
 void PlayerIncrementTrace(){
-	player->stack[0]+=(float)player->stack[4];
+	player->stack[0]+=PlayerGetDeltaTrace();
 }
 void PlayerSetDeltaTrace(float dt){
 	memcpy(&player->stack[4],&dt,sizeof(float));
-	player->stack[4]=dt;
+	//player->stack[4]=dt;
 }
 float PlayerGetDeltaTrace(){
-	return (float)player->stack[4];
+	float buf;
+	memcpy(&buf,&player->stack[4],sizeof(float));
+	return buf;
 }
 void PlayerSetMoney(int money){
 	player->stack[8]=money;
 	
 }
 int PlayerGetMoney(){
-	return (float)player->stack[8];
+	return (int)player->stack[8];
 }
 void PlayerInput(struct actor* player){
 	SetEntryPoint(EP_PLAYERINPUT);
@@ -556,6 +554,16 @@ void PlayerAct(struct actor* self){
 			continue;
 		if(self->collisionresolver)
 			self->collisionresolver(self,act);
+		if(Distance(player->x-act->x,player->y-act->y)>5)
+			continue;
+		switch(act->apperance->character){
+			case 'K':
+				PlayerSetDeltaTrace(PlayerGetDeltaTrace()+1.0f);
+				break;
+			case 'A':
+				PlayerSetDeltaTrace(PlayerGetDeltaTrace()+2.0f);
+				break;
+		}
 	}while((actors=NextDll(actors)));
 	struct dll* interactables=self->currentroom->interactables;
 	do{
