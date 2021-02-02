@@ -22,7 +22,7 @@ src directory) type: make
 3. Once the compile is done a binary will be created called deepnet. To  run the binary 
 type: ./deepnet
 
-#Code Tour
+# Code Tour
 	main.c: Contains the scoring function, functions to catch various signals (segfaults mostly), and the main function. The main function is used to initalize various systems like NCurses, the signal catchers, the game state, the function pointers for the main loop, and setup various objects in the game. To understand the game loop in is import to note that the function calls in main() for ProcessInput(), Update(), and Render() are actually function pointers. This means that though they are called like normal functions actual function they call may be arbitarily changed during run time. This is used so that in various game states ( like in a menu, in game, showing the game over screen) the game loop stays exactly the same, but actual functions called by the main loop change based upon a set global variable for the game's state.
 	A special word should also be said for how I handle the signal segfault. Basically, I have setup in every single function call in the game a special flag that is at the top of a function call and reset to its previous value when a function exits. I did this because segmentation faults are unfortunately very common during runs of the program. I am nor are my players always running GDB when they run the game. So to make tracking down bugs easier when the segfault signal is called the game will read the value of the entry point flag to determine what function caused the segmentation fault. The game will then report this value before exiting to the console.
 
