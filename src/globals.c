@@ -16,6 +16,7 @@ int examiney=0;
 char examinename[128]="NO NAME";
 char examinedescription[128]="NO DESCRIPTION";
 char examinealt[128]="";
+time_t seed=-1;
 
 //Ncurses global color definitions
 int COL_WH  ;

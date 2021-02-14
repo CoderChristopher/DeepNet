@@ -12,6 +12,7 @@ extern int ch;
 
 extern int entrypoint;
 extern int preventrypoint;
+extern time_t seed;
 
 extern int animationticks;
 extern int examinex;

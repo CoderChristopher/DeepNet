@@ -7,7 +7,7 @@ void INGAME_ProcessInput(){
 		Render();//Just run animations while waiting flushinp();
 	switch(ch){
 		case 'q':
-			done=TRUE;
+			exit(0);
 			ResetEntryPoint();
 			return;
 		case '?':
@@ -55,7 +55,7 @@ void MENU_ProcessInput(){
 	flushinp();
 	switch(ch){
 		case 'q':
-			done=TRUE;
+			exit(0);
 			ResetEntryPoint();
 			return;
 		default:
@@ -74,7 +74,7 @@ void DISCONNECT_ProcessInput(){
 	flushinp();
 	switch(ch){
 		default:
-			done=TRUE;
+			exit(0);
 			ResetEntryPoint();
 			return;
 	}
@@ -89,7 +89,7 @@ void GAMEOVER_ProcessInput(){
 	flushinp();
 	switch(ch){
 		case 'q':
-			done=TRUE;
+			exit(0);
 			ResetEntryPoint();
 			return;
 	}
@@ -104,7 +104,7 @@ void ESCAPE_ProcessInput(){
 	flushinp();
 	switch(ch){
 		case 'q':case 'Q':
-			done=TRUE;
+			exit(0);
 			ResetEntryPoint();
 			return;
 	}

@@ -45,10 +45,26 @@ void CloseCatch(int signo){
 	CalculateScore(player);
 	exit(1);
 }
+void cleanup(void){
+	//clean things up
+	endwin();
+	
+	FreeDll(&looklist);
+	FreeDll(&datalist);
+	struct dll* room=currentmap->rooms;
+	while(room&&room->current){
+		FreeDll(&(((struct room*)room->current)->actors));
+		FreeDll(&(((struct room*)room->current)->interactables));
+		room=room->next;
+	}
+	FreeDll(&currentmap->rooms);
+
+	CalculateScore(player);
+	printf("\nWorld Seed: %i\n",seed);
+}
 
 int main(int argc,void* argv[]){
 	BOOLEAN seedset=FALSE;
-	time_t seed=-1;
 	if(argc>1){
 		if(strstr(argv[1],"-s")){
 			char* val=strtok("-s",argv[1]);
@@ -62,7 +78,8 @@ int main(int argc,void* argv[]){
 			}
 		}
 	}
-	done=FALSE;
+	//Setup cleanup
+	atexit(cleanup);
 
 	//Signals to catch various mischief
 	signal(SIGSEGV,SegmentationFaultCatch);
@@ -109,27 +126,10 @@ int main(int argc,void* argv[]){
 
 	//Main Game Loop
 	Render();
-	do{
+	while(1==1){
 		ProcessInput();
 		Update();
 		Render();//Render the world
-	}while(!done);//Check to see if quit condition is called, if not continue on
-
-	//clean things up
-	endwin();
-	
-	FreeDll(&looklist);
-	FreeDll(&datalist);
-	struct dll* room=currentmap->rooms;
-	while(room&&room->current){
-		FreeDll(&(((struct room*)room->current)->actors));
-		FreeDll(&(((struct room*)room->current)->interactables));
-		room=room->next;
 	}
-	FreeDll(&currentmap->rooms);
-
-	CalculateScore(player);
-	printf("\nWorld Seed: %i\n",seed);
-
-	return 0;
+	exit(0);
 }
