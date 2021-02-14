@@ -6,11 +6,13 @@ struct room* GenerateMap(int nodes){
 	memset(currentmap,0,sizeof(currentmap));
 	currentmap->fogofwar=FALSE;
 	currentmap->missionsuccess=FALSE;
+
 	struct room* currentroom=NewRoom(currentmap,&RectangularRoom,5,5);
 	struct room* prevroom=currentroom;
 	char direction=0;//0=NORTH,1=EAST,2=SOUTH,3=WEST
 	int datanumber=0;
 	struct room* currentnode;
+
 	for(int i=0;i<nodes-1;i++){
 		currentnode=NewRoom(currentmap,&RectangularRoom,rand()%15+10,rand()%15+10);
 		switch(rand()%2){
@@ -124,7 +126,7 @@ struct room* GenerateMap(int nodes){
 					continue;	
 				struct actor* a=NewActor(FindLook("Killer ICE"),x,y,currentnode,&KillerInput,&KillerCollision,&KillerAct);
 				GiveAttack( a,  "Lance",2);
-				//GiveDefense(a,"Damge Mitigator",1);
+				//GiveDefense(a,"Damage Mitigator",1);
 				a->speed=2;
 				a->health=8;
 				break;
@@ -190,7 +192,6 @@ struct room* GenerateMap(int nodes){
 		int y=rand()%(currentnode->sizey-3)+1;
 		if(!CheckPassable(x,y,currentnode))
 			continue;
-		BOOLEAN found=FALSE;
 		struct dll* inter=currentnode->interactables;
 		do{
 			if(!inter)
@@ -198,17 +199,17 @@ struct room* GenerateMap(int nodes){
 			if(!inter->current)
 				break;
 			if(((struct interactable*)inter->current)->x==x&&((struct interactable*)inter->current)->y==y){
-				found=TRUE;
-				break;
+				//If another object was found to inhabit the proposed (x,y) then skip over making the Sys Admin object
+				//and find a new proposed (x,y) location
+				goto cont;
 			}	
 		}while(inter=NextDll(inter));
-		if(found)
-			continue;	
 		struct actor* a=NewActor(FindLook("System Admin"),x,y,currentnode,&SysAdminInput,&SysAdminCollision,&SysAdminAct);
 		GiveAttack( a,"Katana",4);
 		GiveDefense(a,"Barrier",1);
 		a->health=20;
 		break;
+		cont:;
 	}
 	ResetEntryPoint();
 	return currentroom;

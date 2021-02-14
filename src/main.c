@@ -78,7 +78,7 @@ int main(int argc,void* argv[]){
 			}
 		}
 	}
-	//Setup cleanup
+	//Register cleanup functions
 	atexit(cleanup);
 
 	//Signals to catch various mischief
