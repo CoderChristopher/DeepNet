@@ -1,12 +1,11 @@
 #include "render.h"
 void INGAME_Render(){
+	//If current room is not set, just run away, nothing good will happen if you proceed
+	if(!currentroom)
+		return;
+
 	SetEntryPoint(EP_INGAME_RENDER);
 	erase();
-	//If current room is not set, just run away, nothing good will happen if you proceed
-	if(!currentroom){
-		ResetEntryPoint();
-		return;
-	}
 	//These coordinates are used for the world camera, basically centers around the
 	//player and displays the tiles immediately around
 	int leftcoordinate=player->x-10;
@@ -20,25 +19,25 @@ void INGAME_Render(){
 			if(i<0||j<0||i>currentroom->sizey-1||j>currentroom->sizex-1){
 				attron(COL_RD);
 				addch((const char)(rand()%32+32));
-			}else{//Otherwise if it is a good coordinate then render the given tile
-				if(!currentroom->tiles[i*currentroom->sizex+j].seen){
-					if(!currentmap->fogofwar||LineOfSight(player->x,player->y,j,i,player->currentroom)){
-						if(!currentroom->tiles[i*currentroom->sizex+j].apperance)
-							continue;
-						attron(currentroom->tiles[i*currentroom->sizex+j].apperance->nattribute);
-						printw("%c",currentroom->tiles[i*currentroom->sizex+j].apperance->character);
-						currentroom->tiles[i*currentroom->sizex+j].seen=TRUE;
-					}else{
-						attron(COL_RD);
-						addch((const char)(rand()%32+32));
-					}
-				}else{
+				continue;
+			}
+			if(!currentroom->tiles[i*currentroom->sizex+j].seen){
+				if(!currentmap->fogofwar||LineOfSight(player->x,player->y,j,i,player->currentroom)){
 					if(!currentroom->tiles[i*currentroom->sizex+j].apperance)
 						continue;
 					attron(currentroom->tiles[i*currentroom->sizex+j].apperance->nattribute);
 					printw("%c",currentroom->tiles[i*currentroom->sizex+j].apperance->character);
+					currentroom->tiles[i*currentroom->sizex+j].seen=TRUE;
+					continue;
 				}
+				attron(COL_RD);
+				addch((const char)(rand()%32+32));
+				continue;
 			}
+			if(!currentroom->tiles[i*currentroom->sizex+j].apperance)
+				continue;
+			attron(currentroom->tiles[i*currentroom->sizex+j].apperance->nattribute);
+			printw("%c",currentroom->tiles[i*currentroom->sizex+j].apperance->character);
 		}
 		printw("\n");
 	}
@@ -118,9 +117,9 @@ void INGAME_Render(){
 			else
 				addch('-');
 		}else
-			addch(' ');
+			break;
 	}
-	addch('#');
+	mvaddch(11,34,'#');
 	//Render the bottom
 	mvprintw(12,23,"############");
 
